@@ -178,7 +178,19 @@ presets:
 
     # 时间段定义 ── 只有晚间汇总需要特殊处理
     periods:
-      evening_summary:
+      morning_summary:
+      name: "早间汇总"
+      start: "09:00"
+      end: "11:00"
+      analyze: true
+      ai_mode: "daily"
+      report_mode: "daily"
+      push: true
+      once:
+        analyze: true
+        push: true
+
+    evening_summary:
         name: "晚间汇总"
         start: "20:00"
         end: "22:00"
@@ -491,6 +503,18 @@ custom:
       push: true
       report_mode: "daily"         # 周末看全天汇总
       # once 继承 default（push: true）→ 窗口内只推一次
+
+    morning_summary:
+      name: "早间汇总"
+      start: "09:00"
+      end: "11:00"
+      analyze: true
+      ai_mode: "daily"
+      report_mode: "daily"
+      push: true
+      once:
+        analyze: true
+        push: true
 
     evening_summary:
       name: "晚间汇总"
